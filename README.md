@@ -34,6 +34,6 @@ module.exports = function(n, t, r) {
 }
 // dynamicToken 计算方法 
 // seedToken,pin,csrfID 都来源于这个接口 https://tuijian.taobao.com/api2/member/getInfo.json
-var dynamicToken jsvmfuc(seedToken, pin, timeStamp)
+var dynamicToken = jsvmfuc(seedToken, pin, timeStamp)
 
 ```
