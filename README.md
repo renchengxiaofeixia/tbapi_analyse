@@ -169,4 +169,12 @@ imsdk.invoke('application.invokeMTopChannelService', {
             httpMethod: 'post',
             version: '3.0'
         });
+//自助锁单
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.gearfactory.order.intercept',
+            param:{bizOrderId:"2133960085351304051",fromNick:"itoqc0665",buyerNick:'vrkelun3258',triggerType:"airisland",subOrderIds:'["2133960085351304051"]'},
+            httpMethod: 'post',
+            version: '1.0'
+});
+
 ```
