@@ -178,5 +178,12 @@ imsdk.invoke('application.invokeMTopChannelService', {
             httpMethod: 'post',
             version: '1.0'
 });
+//转接的客服分组信息，包含客服信息
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.qianniu.cloudkefu.dispatchgroups.get',
+            httpMethod: 'post',
+            version: '2.0'
+        });
 
+index.js:1 message:imsdk:log 
 ```
