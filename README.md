@@ -162,4 +162,11 @@ await imsdk.invoke('application.invokeMTopChannelService', {
     httpMethod: 'post',
     version: '1.0'
 });
+//转接
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.qianniu.cloudkefu.forward',
+            param:{"buyerId":buyerid,"toId":toid,"reason":"","options":"{\"appCid\":\"ccode\",\"buyerDomain\":\"cntaobao\",\"loginDomain\":\"cntaobao\"}"},
+            httpMethod: 'post',
+            version: '3.0'
+        });
 ```
