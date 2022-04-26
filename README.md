@@ -185,5 +185,11 @@ imsdk.invoke('application.invokeMTopChannelService', {
             version: '2.0'
         });
 
-index.js:1 message:imsdk:log 
+//发送消息
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.wireless.amp2.im.message.send',
+            param:{"bizType":"301","entityType":"G","accessKey":"qianniu-pc","accessSecret":"qianniu-pc-secret","sdkVersion":"1.0.0","messages":"[{\"templateData\":\"{\\\"text\\\":\\\"有最新版本吗\\\"}\",\"templateId\":101,\"bizUnique\":\"0_G_2155747714#3_1642477787905140#3_1650955165585_36500\",\"summary\":\"\",\"ext\":{\"sender_nick\":\"uid\",\"bizChainID\":null,\"receiver_nick\":\"\",\"messageSource\":2},\"extraAttr\":{}}]","entityId":"0_G_2155747714#3_1642478076769_0_1597305140#3"},
+            httpMethod: 'post',
+            version: '1.0'
+        });
 ```
