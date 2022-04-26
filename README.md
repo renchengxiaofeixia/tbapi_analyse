@@ -162,6 +162,8 @@ await imsdk.invoke('application.invokeMTopChannelService', {
     httpMethod: 'post',
     version: '1.0'
 });
+//邀请下单网页链接
+http://h5.m.taobao.com/awp/base/order.htm?itemId=581893384636&quantity=50&buyNow=true&skuId=4068777279306&spm=a21ddn.22796030a21ddn.23524755.581893384636
 //转接
 imsdk.invoke('application.invokeMTopChannelService', {
             method: 'mtop.taobao.qianniu.cloudkefu.forward',
