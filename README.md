@@ -40,7 +40,7 @@ var dynamicToken = jsvmfuc(seedToken, pin, timeStamp)
 
 ### 千牛MTOP接口
 ```js
-// 最近联系
+// 好友列表
 await QN.app.invoke({
     api: 'invokeMTopChannelService',
     query: {
@@ -79,7 +79,6 @@ await QN.app.invoke({
   }); 
 
 //添加好友
-
 await QN.app.invoke({
     api: 'invokeMTopChannelService',
     query: {
