@@ -164,13 +164,21 @@ await imsdk.invoke('application.invokeMTopChannelService', {
 });
 //邀请下单网页链接
 http://h5.m.taobao.com/awp/base/order.htm?itemId=581893384636&quantity=50&buyNow=true&skuId=4068777279306&spm=a21ddn.22796030a21ddn.23524755.581893384636
-//转接
+//转接 到个人
 imsdk.invoke('application.invokeMTopChannelService', {
             method: 'mtop.taobao.qianniu.cloudkefu.forward',
             param:{"buyerId":buyerid,"toId":toid,"reason":"","options":"{\"appCid\":\"ccode\",\"buyerDomain\":\"cntaobao\",\"loginDomain\":\"cntaobao\"}"},
             httpMethod: 'post',
             version: '3.0'
         });
+// 转接 到分组
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.qianniu.cloudkefu.forward',
+            param:{\"forwardType\":2,\"charset\":\"utf-8\",\"groupId\":groupid,\"exceptUsers\":\"cntaobaosendernick\",\"loginDomain\":\"cntaobao\",\"buyerDomain\":\"cntaobao\",\"appCid\":\"ccode\"}"},
+            httpMethod: 'post',
+            version: '3.0'
+        });
+	
 //自助锁单
 imsdk.invoke('application.invokeMTopChannelService', {
             method: 'mtop.taobao.gearfactory.order.intercept',
@@ -188,7 +196,7 @@ imsdk.invoke('application.invokeMTopChannelService', {
 //发送群消息
 imsdk.invoke('application.invokeMTopChannelService', {
             method: 'mtop.taobao.wireless.amp2.im.message.send',
-            param:{"bizType":"301","entityType":"G","accessKey":"qianniu-pc","accessSecret":"qianniu-pc-secret","sdkVersion":"1.0.0","messages":"[{\"templateData\":\"{\\\"text\\\":\\\"有最新版本吗\\\"}\",\"templateId\":101,\"bizUnique\":\"0_G_2155747714#3_1642477787905140#3_1650955165585_36500\",\"summary\":\"\",\"ext\":{\"sender_nick\":\"uid\",\"bizChainID\":null,\"receiver_nick\":\"\",\"messageSource\":2},\"extraAttr\":{}}]","entityId":"0_G_2155747714#3_1642478076769_0_1597305140#3"},
+            param:{"bizType":"301","entityType":"G","accessKey":"qianniu-pc","accessSecret":"qianniu-pc-secret","sdkVersion":"1.0.0","messages":"[{\"templateData\":\"{\\\"text\\\":\\\"msgtext\\\"}\",\"templateId\":101,\"bizUnique\":\"0_G_2155747714#3_1642477787905140#3_1650955165585_36500\",\"summary\":\"\",\"ext\":{\"sender_nick\":\"uid\",\"bizChainID\":null,\"receiver_nick\":\"\",\"messageSource\":2},\"extraAttr\":{}}]","entityId":"0_G_2155747714#3_1642478076769_0_1597305140#3"},
             httpMethod: 'post',
             version: '1.0'
         });
