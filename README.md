@@ -185,10 +185,25 @@ imsdk.invoke('application.invokeMTopChannelService', {
             version: '2.0'
         });
 
-//发送消息
+//发送群消息
 imsdk.invoke('application.invokeMTopChannelService', {
             method: 'mtop.taobao.wireless.amp2.im.message.send',
             param:{"bizType":"301","entityType":"G","accessKey":"qianniu-pc","accessSecret":"qianniu-pc-secret","sdkVersion":"1.0.0","messages":"[{\"templateData\":\"{\\\"text\\\":\\\"有最新版本吗\\\"}\",\"templateId\":101,\"bizUnique\":\"0_G_2155747714#3_1642477787905140#3_1650955165585_36500\",\"summary\":\"\",\"ext\":{\"sender_nick\":\"uid\",\"bizChainID\":null,\"receiver_nick\":\"\",\"messageSource\":2},\"extraAttr\":{}}]","entityId":"0_G_2155747714#3_1642478076769_0_1597305140#3"},
+            httpMethod: 'post',
+            version: '1.0'
+        });
+	
+//拦截发货 主订单
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.gearfactory.order.interceptallV2',
+            param:{bizOrderId:'212531990405500000761',fromNick:"",buyerNick:'vrkelun3258',"triggerType":"airisland"},
+            httpMethod: 'post',
+            version: '1.0'
+        });
+//拦截发货 子订单
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.gearfactory.order.intercept',
+            param:{bizOrderId:"21332364587351304051",fromNick:"itoqc0665",buyerNick:'vrkelun3258',triggerType:"airisland",subOrderIds:'["21339607498789794051"]'},
             httpMethod: 'post',
             version: '1.0'
         });
