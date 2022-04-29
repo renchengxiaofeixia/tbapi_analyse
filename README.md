@@ -147,6 +147,15 @@ imsdk.invoke('application.invokeMTopChannelService', {
             httpMethod: 'post',
             version: '1.0'
         });
+await QN.app.invoke({
+    api: 'invokeMTopChannelService',
+    query: {
+      method: 'mtop.taobao.bcpush.order.check.detail.card.send',
+      param: {"bizOrderId":"订单号","buyerId":"买家Id"},
+      httpMethod: 'post',
+      version: '1.0',
+    },
+  }); 
 //邀请下单
 await imsdk.invoke('application.invokeMTopChannelService', {
     method: 'mtop.taobao.qianniu.airisland.invite.order.send',
