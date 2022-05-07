@@ -224,4 +224,11 @@ imsdk.invoke('application.invokeMTopChannelService', {
             httpMethod: 'post',
             version: '1.0'
         });
+//用户查询 用来nick 转成 userid
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.wireless.amp2.im.relation.search',
+            param: {"accessKey":"qianniu-pc","accessSecret":"qianniu-pc-secret","accountType":"3","searchKey":"xxx旗舰店"},
+            httpMethod: 'post',
+            version: '1.0'
+        });
 ```
