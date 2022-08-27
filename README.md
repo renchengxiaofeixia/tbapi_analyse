@@ -40,6 +40,42 @@ var dynamicToken = jsvmfuc(seedToken, pin, timeStamp)
 
 ### 千牛MTOP接口
 ```js
+
+//解密收货人信息
+await imsdk.invoke('application.invokeMTopChannelService', {
+    method: 'mtop.cainiao.consign.order.decryptorder',
+    param: {"tradeId":"订单号","channelCode":"SELLER_CENTER_PC"},
+    httpMethod: 'post',
+    version: '1.0'
+});
+
+// 修改订单收货地址
+await QN.app.invoke({
+    api: 'invokeMTopChannelService',
+    query: {
+      method: 'mtop.cainiao.consign.tborder.memoflag.update',
+      param:{
+	{"receiverAddressJson":"{\"address\":\"丈八沟街道科技七路香榭御澄底商雅兰婷\",\"areaId\":\"610113\",\"areaName\":\"雁塔区\",\"cityId\":\"610100\",\"cityName\":\"西安市\",\"countryId\":1,\"post\":\"000000\",\"provId\":\"610000\",\"provName\":\"陕西省\",\"townId\":\"610113007\",\"townName\":\"丈八沟街道\"}","receiverJson":"{\"userName\":\"姓名\",\"mobilePhone\":\"手机\"}","tradeId":"订单号","pageStatus":4,"channelCode":"SELLER_CENTER_PC"}
+      },
+      httpMethod: 'post',
+      version: '1.0',
+    },
+  }); 
+
+// 修改订单卖家备注
+await QN.app.invoke({
+    api: 'invokeMTopChannelService',
+    query: {
+      method: 'mtop.cainiao.consign.tborder.memoflag.update',
+      param:{
+	"tradeId":"订单号","memo":"做好发货","flag":1,"channelCode":"SELLER_CENTER_PC"
+      },
+      httpMethod: 'post',
+      version: '1.0',
+    },
+  }); 
+
+
 // 好友列表
 await QN.app.invoke({
     api: 'invokeMTopChannelService',
