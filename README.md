@@ -40,6 +40,46 @@ var dynamicToken = jsvmfuc(seedToken, pin, timeStamp)
 
 ### 千牛MTOP接口
 ```js
+//商品信息
+await QN.app.invoke({
+    api: 'invokeMTopChannelService',
+    query: {
+      method: 'mtop.tmall.sell.pc.manage.async',
+      param: {"url":"/tmall/manager/table.htm?tab=all","jsonBody":"{\"tab\":\"all\",\"pagination\":{\"current\":1,\"pageSize\":20},\"filter\":{},\"table\":{}}"},
+      httpMethod: 'post',
+      version: '1.0',
+    },
+  }); 
+//问大家
+await QN.app.invoke({
+    api: 'invokeMTopChannelService',
+    query: {
+      method: 'mtop.rm.sellercenter.ask.list',
+      param: {"jsonBody":"{\"pagination\":{\"current\":1,\"pageSize\":10},\"hasAnswer\":1,\"bizType\":200}"},
+      httpMethod: 'post',
+      version: '1.0',
+    },
+  }); 
+//店铺评价信息
+await QN.app.invoke({
+    api: 'invokeMTopChannelService',
+    query: {
+      method: 'mtop.rm.sellercenter.list.data.pc',
+      param: {"jsonBody":"{\"pageType\":\"rateWait4PC\",\"pagination\":{\"current\":1,\"pageSize\":20}}"},
+      httpMethod: 'post',
+      version: '1.0',
+    },
+  }); 
+//千牛快捷短语
+await QN.app.invoke({
+    api: 'invokeMTopChannelService',
+    query: {
+      method: 'mtop.taobao.qianniu.quickphrase.get',
+      param: {from:'',version:1.0},
+      httpMethod: 'post',
+      version: '1.0',
+    },
+  }); 
 
 //解密收货人信息
 await imsdk.invoke('application.invokeMTopChannelService', {
