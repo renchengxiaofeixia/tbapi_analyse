@@ -39,6 +39,43 @@ var dynamicToken = jsvmfuc(seedToken, pin, timeStamp)
 ```
 
 ### 千牛MTOP接口
+
+//获取收货地址
+await window.lib.mtop.request({
+    api: 'mtop.taobao.mbis.getdeliveraddrlist',
+    v: '1.0',
+    data: {},
+  });
+
+//评价
+await window.lib.mtop.request({
+    api: 'mtop.taobao.rate.detaillist.get',
+    v: '4.0',
+    data: {auctionNumId:'574484564204',pageSize:50,pageNo:1,hasPic:1,foldFlag:0,rateType:""},
+  });
+
+//视频
+await window.lib.mtop.request({
+    api: 'mtop.taobao.cloudvideo.video.queryForH5',
+    v: '1.0',
+    data: {videoId:'224731699946',from:'detail'},
+  });
+
+//主图
+await window.lib.mtop.request({
+    api: 'mtop.taobao.detail.getdetail',
+    v: '6.0',
+    data: {itemNumId:'574484564204'},
+});
+
+//详情图
+await window.lib.mtop.request({
+    api: 'mtop.wdetail.getItemDescx',
+    v: '4.1',
+    data: {item_num_id:'574484564204'},
+  });
+
+
 ```js
 //商品信息
 await QN.app.invoke({
