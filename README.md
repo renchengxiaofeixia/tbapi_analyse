@@ -40,6 +40,9 @@ var dynamicToken = jsvmfuc(seedToken, pin, timeStamp)
 
 ### 千牛MTOP接口
 
+```js
+
+
 //获取收货地址
 await window.lib.mtop.request({
     api: 'mtop.taobao.mbis.getdeliveraddrlist',
@@ -76,7 +79,7 @@ await window.lib.mtop.request({
   });
 
 
-```js
+
 //商品信息
 await QN.app.invoke({
     api: 'invokeMTopChannelService',
