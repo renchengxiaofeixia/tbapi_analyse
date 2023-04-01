@@ -348,3 +348,8 @@ imsdk.invoke('application.invokeMTopChannelService', {
             version: '1.0'
         });
 ```
+
+
+右键点击Finder选择前往文件夹, 输入:
+
+~/Library/Group Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Assets/TemporaryItems/MobileApps/
