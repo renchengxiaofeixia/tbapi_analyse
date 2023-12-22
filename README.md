@@ -347,9 +347,101 @@ imsdk.invoke('application.invokeMTopChannelService', {
             httpMethod: 'post',
             version: '1.0'
         });
+
+
+查询店铺优惠券
+mtop.taobao.qianniu.cs.user.shop.coupon.query
+{}
+
+发送优惠券
+api: mtop.taobao.qianniu.cs.user.shop.coupon.send
+{"name":"店铺优惠卷","activityId":"c837b1e32d4d4ff8aab58d0f3ed68715","description":"满10000减1000元","encryptId":"RAzN8BQgcJTmZi38Xpj5igvrzDYFz"}
+
+邀请关注
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.monaco.fans.invitation.messsage',
+            param:{"userId":"2807792688"},
+            httpMethod: 'post',
+            version: '1.0'
+        });
+
+
+邀请留资
+api: mtop.taobao.qianniu.cs.customer.archives.invite
+{"inviteType":1,"encryptId":"RAzN8BQgcJTmZi38Xpj5igvrzDYFz","bizType":"HOME"}
+
+
+客户信息
+api: mtop.taobao.qianniu.cs.user.query
+data: {"encryptId":"RAzN8BQgcJTmZi38Xpj5igvrzDYFz"}
+
+//客户足迹
+mtop.taobao.qianniu.cs.item.record.query
+data: {"encryptId":"RAzN8BQgcJTmZi38Xpj5igvrzDYFz"}
+
+推荐商品
+api: mtop.taobao.qianniu.cs.item.recommend.query
+{}
+
+近三个月订单
+api: mtop.taobao.qianniu.cs.trade.query
+data: {"securityBuyerUid":"RAzN8BQgcJTmZi38Xpj5igvrzDYFz"}        数字id 也可以
+
+历史订单
+api: mtop.taobao.qianniu.cs.trade.history.query
+data: {"securityBuyerUid":"RAzN8BQjwwwxzFPmfGtdD4UdTx2vb","pageNum":1,"pageSize":10}
+
+订单物流信息
+api: mtop.alibaba.fulfillment.printorder.consign.logistics.query
+data: {"bizOrderId":"3625329531413960410"}
+
+发送商品卡片
+api: mtop.taobao.qianniu.cs.item.recommend.send
+data: {"encryptId":"RAzN8BQgcJTmZi38Xpj5igvrzDYFz","batchItemIds":"[741432462492]","type":-1}
+
+邀请下单
+api: mtop.taobao.qianniu.airisland.invite.order.send
+{"encryptId":"RAzN8BQgcJTmZi38Xpj5igvrzDYFz","bizDomain":"taobao","encrypType":"internal","itemProps":"[{\"itemId\":741432462492,\"skuId\":5191249981449,\"quantity\":1,\"context\":{}}]"}
+
+获取当前聊天窗口中的图片
+QN.application.invoke({
+                    cmd: "getCurrentChatImages",
+                    param: "",
+                    error: function t(r) {
+                        console.log(r)
+                    },
+                    success: function e(r) {
+                        console.log(r)
+                    }
+                })
+
+await QN.app.invoke({
+    api: 'getCurrentChatImages'
+})
+
+邀请入群
+imsdk.invoke('application.invokeMTopChannelService', {
+            method: 'mtop.taobao.qianniu.cs.common.card.send',
+            param:{encryptId: '2807792688',extendInfo: JSON.stringify({
+                    cardCode: "tribe_invitation",
+                    cardParams: {
+                         title: "11111",
+                                logo: 'https://img.alicdn.com/imgextra/i3/325718097/O1CN01wWS2XJ29gTYMnjeee_!!325718097.jpg_60x60q90.jpg',
+                                subTitle: '987987',
+                                description: "987987",
+                                btnRight: "111",remark:'¸87977897',phone:'13162548564',name:'655446',fulladdress:'123',
+                                btnRightAction: "https://jq.qq.com/?_wv=1027&k=X4GiH11x",
+                                extActionUrl: "https://jq.qq.com/?_wv=1027&k=X4GiH11x"
+                    },
+                    bizUUid: "123456798457_cntaobaojialingsh_tribe_invitation",
+                    appkey: 23574651
+            }),
+                            domain: "cntaobao"},
+            httpMethod: 'post',
+            version: '1.0'
+        });
+
 ```
 
 
-右键点击Finder选择前往文件夹, 输入:
 
-~/Library/Group Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Assets/TemporaryItems/MobileApps/
